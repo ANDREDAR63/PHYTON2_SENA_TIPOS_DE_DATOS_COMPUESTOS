@@ -9,6 +9,7 @@ print((nombre).upper())
 # 3. Contar cuántas veces aparece la letra "a" en el texto
 texto = "La casa está vacía"
 print(texto.count("a"))
+
 # 4. Mostrar la palabra repetida 5 veces, separada por espacios
 palabra = "Python "
 veces = 5

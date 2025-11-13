@@ -1,3 +1,27 @@
+def solicitar_nombre():
+    print("\n--- FORMULARIO DE USUARIOS ---\n\n") 
+    nombre_1 = input("Ingrese su primer nombre: ")
+    while not nombre_1:
+        nombre_1 = input("\nPor favor ingresa tu nombre: ")
+    nombre_2 = input("\nIngrese su segundo nombre: ")
+    apellido_1 = input("\nIngrese su primer apellido: ")
+    while not apellido_1:
+        apellido_1 = input("\nPor favor ingresa tu primer apellido: ")
+    apellido_2 = input("\nIngrese su segundo apellido: ")
+    nombre_completo = f"{nombre_1} {nombre_2} {apellido_1} {apellido_2}"
+    inicial_nombre_1 = nombre_1[0] if nombre_1 else '' 
+    inicial_nombre_2 = nombre_2[0] if nombre_2 else nombre_1[1]
+    inicial_apellido_2 = apellido_2[0] if apellido_2  else apellido_1[-1]
+    correo_corporativo = (
+        inicial_nombre_1 + 
+        inicial_nombre_2 + 
+        apellido_1 + 
+        inicial_apellido_2).lower() + "@sena.edu.co"
+    print("\n--- RESULTADO ---")
+    print(f"\nNombre completo: {nombre_completo}")
+    print(f"Hola, "+nombre_completo.lower()+". Tu correo corporativo es: "+correo_corporativo)
+    return correo_corporativo 
+# nombre_del_usuario = solicitar_nombre()
 #esta funcion es para revisar si hay simbolos en una cadena de texto
 
 def revisar_simbolos(cadena_de_simbolos):
@@ -94,5 +118,24 @@ def creacion_de_contraseñas ():# SE USARA COMO EJEMPLO EL USO DE CONTRASEÑAS
                 break
         else:print("\ntus contraseñas no son iguales, por favor verifica los datos e intenta nuevamente\n")
     return nueva_contraseña 
-resultado_comparar_str = creacion_de_contraseñas()
+# resultado_comparar_str = creacion_de_contraseñas()
 
+# USUARIO = solicitar_nombre()
+# CONTRASEÑA = creacion_de_contraseñas()
+
+def ingreso_de_sesion(U, C):
+    print("\n::::::::::::::::::::: BIENVENIDO, POR FAVOR INGRESA TUS DATOS DE ACCESO :::::::::::::::::::::::::\n")
+
+    while True:
+        VAL_USUARIO = input("\nUSUARIO = ")
+        VAL_CONTRASEÑA = input("\nCONTRASEÑA = ")
+        
+        if VAL_USUARIO == U and VAL_CONTRASEÑA == C:
+            print(f"\nBienvenido {U}\n")
+            break
+        elif VAL_USUARIO != U:
+            print("USUARIO INCORRECTO. INTÉNTELO DE NUEVO.\n")
+        else:
+            print("CONTRASEÑA INCORRECTA. INTÉNTELO DE NUEVO.\n")
+
+# ingreso_de_sesion(USUARIO,CONTRASEÑA)

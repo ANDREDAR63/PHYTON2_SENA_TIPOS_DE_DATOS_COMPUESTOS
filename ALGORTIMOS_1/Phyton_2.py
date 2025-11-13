@@ -17,6 +17,7 @@ def suma():
     print("\n--- RESULTADO ---")
     print(f"\n{numero_redondeado}\n\n\n")
     return numero_redondeado 
+
 # resultado_suma = suma()
 
 #3. Área del triángulo: Calcula el área de un triángulo con base y altura ingresadas por el usuario.
@@ -35,7 +36,8 @@ def area_de_un_triangulo():
     altura=float(IN_altura)
     Base= float(IN_Base)
 
-    area = (Base * altura) / 2
+    area = (Base
+         * altura) / 2
 
     area_redondeada = round(area,3)
     print("\n--- RESULTADO ---")
@@ -65,7 +67,7 @@ def Potenciacion():
 
 #7. Verificar edad: Pide la edad y muestra si la persona es mayor de edad (≥18).
 
-def edad() :
+def Mayor_de_edad() :
     while True:
         edad_str = input ("\nPor favor ingresa tu edad: ")
         if not edad_str:
@@ -78,14 +80,43 @@ def edad() :
             print("\n!ERROR¡, ingresa un número valido")
     print(f"\nTu edad es {edad_num}\n")
 
-    if edad_num >= 18:
+    if edad_num >= 18 :
         print("\nEres mayor de edad")
     else: print("\nEres menor de edad")
-    return edad_num
-#resultado_edad = edad ()
+
+    if edad_num >= 18 :
+        mayor_de_edad = True
+    else: mayor_de_edad = False
+
+    return mayor_de_edad
+# resultado_edad = Mayor_de_edad ()
 
 #9. Comparar cadenas: Pide dos cadenas y verifica si son iguales.
 
+def solicitar_nombre():
+    print("\n--- FORMULARIO DE USUARIOS ---\n\n") 
+    nombre_1 = input("Ingrese su primer nombre: ")
+    while not nombre_1:
+        nombre_1 = input("\nPor favor ingresa tu nombre: ")
+    nombre_2 = input("\nIngrese su segundo nombre: ")
+    apellido_1 = input("\nIngrese su primer apellido: ")
+    while not apellido_1:
+        apellido_1 = input("\nPor favor ingresa tu primer apellido: ")
+    apellido_2 = input("\nIngrese su segundo apellido: ")
+    nombre_completo = f"{nombre_1} {nombre_2} {apellido_1} {apellido_2}"
+    inicial_nombre_1 = nombre_1[0] if nombre_1 else '' 
+    inicial_nombre_2 = nombre_2[0] if nombre_2 else nombre_1[1]
+    inicial_apellido_2 = apellido_2[0] if apellido_2  else apellido_1[-1]
+    correo_corporativo = (
+        inicial_nombre_1 + 
+        inicial_nombre_2 + 
+        apellido_1 + 
+        inicial_apellido_2).lower() + "@sena.edu.co"
+    print("\n--- RESULTADO ---")
+    print(f"\nNombre completo: {nombre_completo}")
+    print(f"Hola, "+nombre_completo.lower()+". Tu correo corporativo es: "+correo_corporativo)
+    return correo_corporativo 
+# nombre_del_usuario = solicitar_nombre()
 #esta funcion es para revisar si hay simbolos en una cadena de texto
 
 def revisar_simbolos(cadena_de_simbolos):
@@ -95,6 +126,7 @@ def revisar_simbolos(cadena_de_simbolos):
         if not caracter.isalnum():
             return True
     return False
+
 
 #esta funcion es para revisar si hay numeros en una cadena de texto
 
@@ -152,11 +184,11 @@ def creacion_de_contraseñas ():# SE USARA COMO EJEMPLO EL USO DE CONTRASEÑAS
                 print("\ntu contraseña requiere al menros un numero")
                 contraseña_valida=False
 
-            if not revisar_mayusculas(nueva_contraseña) == True:
+            if not revisar_mayusculas(nueva_contraseña) :
                 print("\ntu contraseña requiere al menos una letra mayuscula")
                 contraseña_valida=False
 
-            if not revisar_minusculas(nueva_contraseña) == True:
+            if not revisar_minusculas(nueva_contraseña) :
                 print("\ntu contraseña requiere al menos una letra minuscula")
                 contraseña_valida=False
             
@@ -181,34 +213,71 @@ def creacion_de_contraseñas ():# SE USARA COMO EJEMPLO EL USO DE CONTRASEÑAS
                 break
         else:print("\ntus contraseñas no son iguales, por favor verifica los datos e intenta nuevamente\n")
     return nueva_contraseña 
-#resultado_comparar_str = creacion_de_contraseñas()
+# resultado_comparar_str = creacion_de_contraseñas()
 
-#11. Acceso permitido: Solicita usuario y contraseña y valida si ambos son correctos usando and.
+#11. Acceso de usuario: Pide un nombre de usuario y contraseña, y verifica si coinciden con valores predefinidos.
 
-USUARIO = input("\npor favor crea  tu usuario\n")
-CONTRASEÑA = creacion_de_contraseñas()
+# USUARIO = solicitar_nombre()
+# CONTRASEÑA = creacion_de_contraseñas()
 
-def ingreso_de_sesion(U,C):
-    print("\n:::::::::::::::::::::BIENVENIDO POR FAVOR INGRESA TUS DATOS DE ACCESO:::::::::::::::::::::"
-    "\n ")
+def ingreso_de_sesion(U, C):
+    print("\n::::::::::::::::::::: BIENVENIDO, POR FAVOR INGRESA TUS DATOS DE ACCESO :::::::::::::::::::::::::\n")
 
     while True:
-        VAL_USUARIO = input("\nUSUARIO= ")
-        if VAL_USUARIO == U:
-            VAL_CONTRASEÑA = input("\nCONTRASEÑA= ")
-            if VAL_CONTRASEÑA == C:                
-                break
-            else:
-                print("\nCONTRASEÑA INCORRECTA INTENTELO DE NUEVO")    
+        VAL_USUARIO = input("\nUSUARIO = ")
+        VAL_CONTRASEÑA = input("\nCONTRASEÑA = ")
+        
+        if VAL_USUARIO == U and VAL_CONTRASEÑA == C:
+            print(f"\nBienvenido {U}\n")
+            break
+        elif VAL_USUARIO != U:
+            print("USUARIO INCORRECTO. INTÉNTELO DE NUEVO.\n")
         else:
-            print("\USUARIO INCORRECTO INTENTELO DE NUEVO")
-    
-    print(f"Bienvenido {USUARIO}")
+            print("CONTRASEÑA INCORRECTA. INTÉNTELO DE NUEVO.\n")
 
-ingreso_de_sesion(USUARIO,CONTRASEÑA)
+# ingreso_de_sesion(USUARIO,CONTRASEÑA)
 
 #13. Verificación múltiple: Pide tres valores booleanos e imprime si al menos uno es True (usa or).
-#15. Combinación: Determina si un número está entre 10 y 50 y es par al mismo tiempo.
-#17. Descuento: Crea una variable precio, aplica un 20% de descuento usando *= y muestra el nuevo valor.
-#19. AND bit a bit: Pide dos números enteros y muestra el resultado de &amp;. 
 
+# val_1 = Mayor_de_edad()
+# val_2 = input("\n¿tiene nacionalidad colombiana? (si/no): ").strip().lower()
+# val_3 = input("\n¿pertenece a algun grupo poblacional específico (indígena, pelenquero, desplazado, etc.)? (si/no): ").strip().lower()
+
+# if val_2 == "si":
+#     val_2 = True
+# else:
+#     val_2 = False
+
+# if val_3 == "si":
+#     val_3 = True
+# else:
+#     val_3 = False
+
+
+
+#15. Combinación: Determina si un número está entre 10 y 50 y es par al mismo tiempo.
+
+# print("\n--- VERIFICAR SI UN NUMERO ESTA ENTRE 10 Y 50 Y ES PAR ---\n\n")
+# numero = int(input("\nIngresa un numero entero: "))
+# cumple_la_condicion = (10 <= numero <=50) and (numero % 2 ==0)
+
+# if cumple_la_condicion:
+#     print("este numero no cumple la condicion")
+# else:
+#     print("este numero no cumple la condicion")
+
+#17. Descuento: Crea una variable precio, aplica un 20% de descuento usando *= y muestra el nuevo valor.
+precio = float(input("\nIngrese el precio del producto: "))
+descuento = 0.20        
+precio *= (1 - descuento)  
+precio_redondeado = round(precio, 2)
+print(f"\nEl precio con el descuento aplicado es: {precio_redondeado}\n")
+
+#19. AND bit a bit: Pide dos números enteros y muestra el resultado de &amp;. 
+num1 = int(input("\nIngrese el primer número entero: "))
+num2 = int(input("\nIngrese el segundo número entero: "))
+
+resultado = num1 & num2
+
+print(f"\nEl resultado de {num1} & {num2} es: {resultado}\n")
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
