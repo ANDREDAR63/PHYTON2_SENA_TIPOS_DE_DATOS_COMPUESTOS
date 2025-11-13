@@ -90,7 +90,6 @@ def agregar_o_eliminar():
     
     def eliminar ():
         producto_a_eliminar = input(f"\nelimine un producto de la lista ").lower()
-        
         if producto_a_eliminar in inventario:
             inventario.remove(producto_a_eliminar)
             print(f"\n{producto_a_eliminar} ha sido eliminado con exito")
@@ -211,10 +210,3 @@ def manejar_busquedas(lista_productos):
 
 # 10. Índice de un elemento
 #   o Crea una tupla y encuentra la posición de un elemento con .index().   
-b_tupla = ("arroz", "cafe", "leche", "banano", "aguacate", "azucar")
-
-def manejar_busquedas (lista_productos):
-# ... (código truncado en la imagen)
-
-# Ejecutar el manejador de búsquedas
-#manejar_busquedas (b_tupla)
