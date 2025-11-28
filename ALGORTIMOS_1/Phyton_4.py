@@ -72,17 +72,30 @@ def agregar_o_eliminar():
     print("\n--- INGREDIENTES FINALES ---")
     print(*ingredientes)
     print("------------------------------")
-agregar_o_eliminar()
+# agregar_o_eliminar()
 
 
 # 3. Codificador por Saltos
 # Crea un programa que reciba una lista de letras y un número salto,
 # Debe generar una nueva lista con las letras saltando de acuerdo al valor dado.
 # Ejemplo
-# letras = ["a", "b", "c", "d", "e", "", "g"]
-# salto = 2 -+ ["a", "c", "e", "g"]
+#letras = ["a", "b", "c", "d", "e", "", "g"]
+#salto = 2 -+ ["a", "c", "e", "g"]
 
+letras_largas = [
+    "A", "B", "C", "D", "E", 
+    "F", "G", "H", "I", "J", 
+    "K", "L", "M", "N", "O", 
+    "P", "Q", "R", "S", "T", 
+    "U", "V", "W", "X", "Y"
+]
+def codificador_por_saltos(letras, salto):
+    return letras [::salto]
 
+salto = input(f"\ningresa el numero de salto para codificar las letras: \n")
+nueva_lista = codificador_por_saltos (letras_largas, int(salto))
+print(f"\nla lista original de letras es: {letras_largas}")
+print(f"\nla nueva lista codificada es: \n{nueva_lista}")
 
 # 4. Eliminar Duplicados y Ordenar al Revés
 # Dada una lista con números repetidos, crea un programa que elimine los duplicados y ordene los valores
@@ -90,8 +103,18 @@ agregar_o_eliminar()
 # # Ejemplo
 # numeros = [4, 2, 8, 4, 1, 8, 3] -+ [8, 4, 3, 2, 1]
 
-
-
+numeros_repetidos = [
+    5, 12, 8, 5, 20, 
+    1, 12, 10, 8, 3, 
+    5, 15, 20, 10, 8, 
+    2, 12, 5, 1, 15, 
+    7, 10, 3, 20, 12,
+    5, 8, 15, 1, 20
+]
+def eliminar_duplicados_y_ordenar(numeros):
+    numeros_repetidos = list(set(numeros))
+    ordenar_numeros = sorted(numeros,reverse=True)
+eliminar_duplicados_y_ordenar(numeros_repetidos)
 # 5. Combinar Nombres y Apellidos
 # Tienes dos listas: una de nombres y otra de apellidos.
 # Escribe un programa que genere una nueva lista con el nombre completo de cada persona combinando

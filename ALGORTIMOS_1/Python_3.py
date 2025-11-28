@@ -3,60 +3,60 @@
 # 1. Lista de compras básica
 #    o Crea una lista con 5 productos de supermercado y muéstrala en pantalla.
 
-# productos = ["CHOCOLATE","CAFE","AZUCAR","LECHE","PAN"]
-# print(productos)
-# print (type(productos))
+productos = ["CHOCOLATE","CAFE","AZUCAR","LECHE","PAN"]
+print(productos)
+print (type(productos))
 
 # # 2. Modificar tu pedido
 # #   o Tienes una lista con 4 comidas favoritas, cambia la segunda por un nuevo platillo.
 
-# comidas_favoritas = ["arroz chino","ramen","sushi","lechona"]
-# print(comidas_favoritas)
-# comidas_favoritas[1]="sopa"
-# print(comidas_favoritas)
+comidas_favoritas = ["arroz chino","ramen","sushi","lechona"]
+print(comidas_favoritas)
+comidas_favoritas[1]="sopa"
+print(comidas_favoritas)
 
 # # 3. Agregar y quitar invitados
 # #   o Crea una lista con 3 invitados a una fiesta, agrega dos más, y luego elimina uno.
 
-# invitados = ["paula","juliana","carolina"]
-# print(invitados)
-# invitados.extend(["felipe","luis"]) 
-# print(invitados)
-# invitados.remove("paula")
+invitados = ["paula","juliana","carolina"]
+print(invitados)
+invitados.extend(["felipe","luis"]) 
+print(invitados)
+invitados.remove("paula")
 
 # # 4. Lista inversa
 # #   o Crea una lista con 5 colores y muestra la lista en orden inverso usando reverse() o [::-1].
 
-# colores = ["amarillo","rojo","azul","blanco","purpura"]
-# print(f"\nlista original: {colores}")
-# colores.reverse()
-# print(f"\nprimer inverso: {colores}")
-# colores_inverso = colores[::-1]
-# print(f"\nlista original al reversar con la función ::-1 {colores_inverso}")
+colores = ["amarillo","rojo","azul","blanco","purpura"]
+print(f"\nlista original: {colores}")
+colores.reverse()
+print(f"\nprimer inverso: {colores}")
+colores_inverso = colores[::-1]
+print(f"\nlista original al reversar con la función ::-1 {colores_inverso}")
 
 # # 5. Contando animales
 # #   o Crea una lista con animales y usa len() para mostrar cuántos hay.
 
-# animales = ["leon","tigre","vaca","oveja","abeja","elefante"]
-# print(f"\nlistado de aminales es: {animales}")
-# contar_animales =len(animales)
-# print(f"\nla cantidad de animales en la lista es {contar_animales}")
+animales = ["leon","tigre","vaca","oveja","abeja","elefante"]
+print(f"\nlistado de aminales es: {animales}")
+contar_animales =len(animales)
+print(f"\nla cantidad de animales en la lista es {contar_animales}")
 
 # # 6. Duplicados fuera
 # #   o Crea una lista con elementos repetidos y usa set() para mostrar la lista sin duplicados.
 
-# lista_combinada = [1,54,True,False,"andres","eduardo","ANDRES","rojas",1,54,True]
-# print(f"\n{lista_combinada}")
-# lista_limpia = set(lista_combinada)
-# print(f"\nla lista sin datos repetido es esta {lista_limpia}")
+lista_combinada = [1,54,True,False,"andres","eduardo","ANDRES","rojas",1,54,True]
+print(f"\n{lista_combinada}")
+lista_limpia = set(lista_combinada)
+print(f"\nla lista sin datos repetido es esta {lista_limpia}")
 
 # # 7. Números al cuadrado
 # #   o Crea una lista de números y genera una nueva lista con el cuadrado de cada número usando un bucle o comprensión de listas.
 
-# lista = [1,2,3,4,5,6,7,8,9,10,11]
-# nueva_lista = [numero ** 2 for numero in lista ]
-# print(f"\nla lista original es igual a {lista}"
-#       f"\nla nueva lista con los datos duplicados es igual: {nueva_lista}")
+lista = [1,2,3,4,5,6,7,8,9,10,11]
+nueva_lista = [numero ** 2 for numero in lista ]
+print(f"\nla lista original es igual a {lista}"
+      f"\nla nueva lista con los datos duplicados es igual: {nueva_lista}")
 
 # # 8. Lista combinada
 # #    o Une dos listas (por ejemplo, frutas y verduras) en una sola y muéstrala.
